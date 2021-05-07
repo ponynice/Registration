@@ -1,0 +1,58 @@
+{
+  "id": "2452574",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5365351",
+      "name": "返回",
+      "font_class": "ffanhui-",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "631502",
+      "name": "查询数据列表",
+      "font_class": "querylist",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "6275359",
+      "name": "定位",
+      "font_class": "icon-test",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "7516882",
+      "name": "登录用户",
+      "font_class": "dengluyonghu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "16780728",
+      "name": "登录-密码",
+      "font_class": "denglu-mima",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "7556175",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "17710109",
+      "name": "锁",
+      "font_class": "mima",
+      "unicode": "e7ee",
+      "unicode_decimal": 59374
+    }
+  ]
+}
