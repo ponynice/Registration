@@ -30,7 +30,7 @@
               <span>选择题</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item index="link">
+            <el-menu-item index="1-1">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -38,7 +38,7 @@
                 <span>单选题</span>
               </template>
             </el-menu-item>
-            <el-menu-item index="link">
+            <el-menu-item index="1-2">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -56,7 +56,7 @@
               <span>填空题</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item index="link">
+            <el-menu-item index="2">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -64,7 +64,7 @@
                 <span>单个填空题</span>
               </template>
             </el-menu-item>
-            <el-menu-item index="link">
+            <el-menu-item index="2">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -82,7 +82,7 @@
               <span>个人中心</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item index="link">
+            <el-menu-item index="3-1">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -100,7 +100,7 @@
               <span>备注说明</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item index="link">
+            <el-menu-item index="4-1">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -140,49 +140,7 @@
             </el-form-item>
           </el-form>
     </div>
-    <div class="box2">
-      <el-form :inline="true" :model="formInline" class="demo-form-inline1">
-  <el-form-item label=" 学号">
-    <el-input v-model="formInline.numbers" placeholder="请输入内容"></el-input>
-  </el-form-item>
-  <el-form-item label="姓名">
-    <el-input v-model="formInline.region" placeholder="请输入内容">
-    </el-input>
-  </el-form-item>
-</el-form>
-<el-form :inline="true" :model="formInline2" class="demo-form-inline2">
-  <el-form-item label="QQ">
-    <el-input v-model="formInline2.qq" placeholder="请输入内容"></el-input>
-  </el-form-item>
-  <el-form-item label="邮箱">
-    <el-input v-model="formInline2.email" placeholder="请输入内容">
-    </el-input>
-  </el-form-item>
-</el-form>
-    </div>
-    <div class="box3">
-      <span class="time">(设置截止时间)</span>
-      <div class="block">
-    <span>选择截止日期：</span>
-    <el-date-picker
-      v-model="value1"
-      type="date"
-      placeholder="选择日期">
-    </el-date-picker>
-    <div class="block1">
-      <span>选择截止时间：</span>
-      <el-time-select
-  v-model="value"
-  :picker-options="{
-    start: '21:30',
-    step: '00:15',
-    end: '24:00'
-  }"
-  placeholder="选择时间">
-</el-time-select>
-    </div>
-  </div>
-    </div>
+<router-view></router-view>
       </el-main>
     </el-container>
     </div>
@@ -192,16 +150,6 @@
 export default {
     data() {
 return {
-  value1: '',
-  value: '',
-     formInline: {
-        numbers: '',
-        region: ''
-      },
-       formInline2: {
-        qq: '',
-        email: ''
-      },
     TitleForm: {
         name: '标题',
         show: '感谢您能抽出几分钟时间来参加本次答题，现在我们就马上开始吧！'
@@ -291,67 +239,6 @@ methods: {
   top: 10%;
   .el-input_inner {
     height: 30px;
-  }
-}
-.box2 {
-  border-style: solid;
-  border-width:1px;
-  border-radius: 0px;
-  border-color: rgb(121, 121, 121);
-  width: 1114px;
-  height: 160px;
-  background-color: rgb(248, 248, 248);
-  position: absolute;
-  left: 18%;
-  top: 300px;
-  .demo-form-inline1 {
-    font-size: 25px;
-    position: absolute;
-    left: 20%;
-    top: 20px;
-  }
-  .demo-form-inline2 {
-    font-size: 25px;
-    position: absolute;
-    left: 20%;
-    top: 80px;
-  }
-}
-.box3 {
-  border-style: solid;
-  border-width:1px;
-  border-radius: 0px;
-  border-color: rgb(121, 121, 121);
-  width: 1114px;
-  height: 370px;
-  background-color: rgb(248, 248, 248);
-  position: absolute;
-  left: 18%;
-  top: 530px;
-  .time {
-    color: rgb(121, 121, 121);
-    font-size: 30px;
-    position: absolute;
-    left:5%;
-    top:5%;
-  }
-  .block {
-    position: absolute;
-    width:50%;
-    top: 20%;
-    left: 30%;
-    >span {
-      font-szie: 30px;
-    }
-  }
-  .block1 {
-    position: absolute;
-    width:60%;
-    top: 100px;
-    left: 0;
-    >span {
-      font-szie: 30px;
-    }
   }
 }
 </style>

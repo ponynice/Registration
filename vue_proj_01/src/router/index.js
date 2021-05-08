@@ -17,6 +17,11 @@ import SuperManage from '../components/SuperDepartment/supermanage.vue'
 import Query from '../components/Examine/querytime.vue'
 import Content from '../components/Examine/content.vue'
 import Link from '../components/Examine/link.vue'
+import Schoice from '../components/queryContent/singlechoice.vue'
+import Mchoice from '../components/queryContent/multiplechoice.vue'
+import Person from '../components/queryContent/personal.vue'
+import Stop from '../components/queryContent/stop.vue'
+import Vacancy from '../components/queryContent/vacancy.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
@@ -41,8 +46,24 @@ export default new VueRouter({
       component: Link,
       children: [
         {
-          path: '/welcome',
-          component: Welcome
+          path: '/1-1',
+          component: Schoice
+        },
+        {
+          path: '/1-2',
+          component: Mchoice
+        },
+        {
+          path: '/3-1',
+          component: Person
+        },
+        {
+          path: '/4-1',
+          component: Stop
+        },
+        {
+          path: '/2',
+          component: Vacancy
         }
       ]
     },
