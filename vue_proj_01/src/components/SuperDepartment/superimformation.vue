@@ -91,7 +91,7 @@
           </el-form>
   <span slot="footer" class="dialog-footer">
     <el-button @click="BdialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="BdialogVisible = false">确 定</el-button>
+    <el-button type="primary" @click="BdialogVisible = false,addToStudent()">确 定</el-button>
   </span>
  </el-dialog>
         <el-table :data="tableData" border :header-cell-style="{background:'rgb(249, 250, 252)',color:'black'}" :cell-style="cellStyle">
@@ -117,7 +117,7 @@
             删除后，这名管理员的管理权限即将被收回，管理员账号将作废</span>
          <span slot="footer" class="dialog-footer">
             <el-button @click="AdialogVisible = false">取 消</el-button>
-            <el-button type="primary" @click="AdialogVisible = false">确 定</el-button>
+            <el-button type="primary" @click="AdialogVisible = false,deleteStudent(index)">确 定</el-button>
         </span>
         </el-dialog>
           </el-table-column>
@@ -184,7 +184,19 @@ export default {
   methods: {
     goback() {
        this.$router.go(-1)
-    }
+    },
+    deleteStudent(index) {
+        this.tableData.splice(index, 1)
+      },
+    addToStudent() {
+        var data = {
+          name: this.AddForm.studentname,
+          number: this.AddForm.studentnum,
+          email: this.AddForm.studentemail
+        }
+        this.tableData.push(data)
+        this.$refs.AddFormRef.resetFields()
+      }
   }
 }
 </script>

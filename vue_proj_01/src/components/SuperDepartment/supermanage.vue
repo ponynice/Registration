@@ -37,7 +37,7 @@
           </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="ADDdialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="ADDdialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="ADDdialogVisible = false,addManage()">确 定</el-button>
       </span>
  </el-dialog>
           </div>
@@ -113,6 +113,15 @@ export default {
 methods: {
   goback() {
        this.$router.go(-1)
+    },
+    addManage() {
+      var data = {
+          name: this.addForm.departmentname,
+          introduction: this.addForm.departmentintro,
+          num: '10'
+        }
+        this.userlist.push(data)
+        this.$refs.addFormRef.resetFields()
     }
 }
 }

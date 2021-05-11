@@ -13,7 +13,7 @@
       <el-col :span="24"
         ><div class="grid-content bg1">
           <span>考核周期——19级上</span>
-          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext()"></el-button>
+          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext1()"></el-button>
           </div
       ></el-col>
     </el-row>
@@ -21,7 +21,7 @@
       <el-col :span="24"
         ><div class="grid-content bg2">
           <span>考核周期——19级下</span>
-          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext()"></el-button>
+          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext2()"></el-button>
           </div
       ></el-col>
     </el-row>
@@ -29,7 +29,7 @@
       <el-col :span="24"
         ><div class="grid-content bg3">
           <span>考核周期——20级上</span>
-          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext()"></el-button>
+          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext3()"></el-button>
           </div
       ></el-col>
     </el-row>
@@ -37,7 +37,7 @@
       <el-col :span="24"
         ><div class="grid-content bg4">
           <span>考核周期——20级下</span>
-          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext()"></el-button>
+          <el-button type="info" icon="el-icon-arrow-right" circle @click="tonext4()"></el-button>
           </div
       ></el-col>
     </el-row>
@@ -71,9 +71,18 @@ export default {
     goback() {
        this.$router.go(-1)
     },
-    tonext() {
-      this.$router.push('/three')
-    }
+    tonext1() {
+        this.$router.push({ path:'/three', query:{ name:'19级上' } })
+      },
+      tonext2() {
+        this.$router.push({ path:'/three', query:{ name:'19级下' } })
+      },
+      tonext3() {
+        this.$router.push({ path:'/three', query:{ name:'20级上' } })
+      },
+      tonext4() {
+        this.$router.push({ path:'/three', query:{ name:'20级下' } })
+      }
   }
 }
 </script>

@@ -56,7 +56,7 @@
               <span>填空题</span>
             </template>
             <!--二级菜单-->
-            <el-menu-item index="2">
+            <el-menu-item index="2-1">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>
@@ -64,7 +64,7 @@
                 <span>单个填空题</span>
               </template>
             </el-menu-item>
-            <el-menu-item index="2">
+            <el-menu-item index="2-2">
               <template slot="title">
                 <!--图标-->
                 <i class="el-icon-document"></i>

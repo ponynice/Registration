@@ -23,22 +23,7 @@
               >
                 <el-input v-model.trim="item.questionName" style="width:258px" clearable placeholder="请填写问题" />
               </el-form-item>
-              <!-- 答案 -->
-              <el-form-item
-                v-for="(opt, idx) in item.answers"
-                v-show="item.type!=2"
-                :key="idx"
-                :label="`选项${idx + 1}`"
-                :prop="`topic.${index}.answers.${idx}.value`"
-                :rules="[
-                  { required: true, message: '请输入答案', trigger: 'blur' },
-                ]"
-              >
-                <el-input v-model.trim="opt.value" style="width:258px" clearable placeholder="请输入答案" />
-                <el-button style="margin-left: 20px" @click.prevent="removeDomain(index,idx)">删除</el-button>
-              </el-form-item>
               <el-form-item>
-                <el-button v-show="item.type!=2" @click="addDomain(index)">新增选项</el-button>
                 <el-button @click="removeQuestion(index)">删除题目</el-button>
               </el-form-item>
             </el-collapse-item>
@@ -81,14 +66,8 @@ export default {
     end(evt) {
       this.$refs.modelForm.clearValidate()
     },
-    removeDomain(index, idx) { // 删除选项
-      this.modelForm.topic[index].answers.splice(idx, 1)
-    },
     removeQuestion(index) { // 删除题目
       this.modelForm.topic.splice(index, 1)
-    },
-    addDomain(index) { // 新增选项
-      this.modelForm.topic[index].answers.push({ value: '' })
     },
     addQuestion() { // 新增题目
       this.modelForm.topic.push({ type: '', questionName: '', answers: [{ value: '' }] })

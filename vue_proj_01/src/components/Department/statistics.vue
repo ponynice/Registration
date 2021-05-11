@@ -126,7 +126,7 @@
           </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="dialogVisible = false,addToStudent()">确 定</el-button>
       </span>
         </el-dialog>
         <div
@@ -162,7 +162,7 @@
           </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="AdialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="AdialogVisible = false">确 定</el-button>
+        <el-button type="primary" @click="AdialogVisible = false,deleteStudent(index)">确 定</el-button>
       </span>
  </el-dialog>
  <el-dialog
@@ -343,6 +343,19 @@ export default {
       },
       goback() {
         this.$router.go(-1)
+      },
+      addToStudent() {
+        var data = {
+          name: this.addForm.studentname,
+          nums: this.addForm.studentnum,
+          qq: this.addForm.studentqq,
+          email: this.addForm.studentemail
+        }
+        this.userlist.push(data)
+        this.$refs.addFormRef.resetFields()
+      },
+      deleteStudent(index) {
+        this.userlist.splice(index, 1)
       }
     }
 }

@@ -138,22 +138,21 @@ export default {
             this.$refs.LoginFormRef.validate(async valid => {
                 console.log(valid)
                 if (valid) {
-                    const { data: res } = await this.$http.get('api/csrf/token')
+                    const { data: res } = await this.$http.get('/api/csrf/token')
                         window.sessionStorage.setItem('token', res.data.token)
-                    this.$http({
-                        url: 'api/auth/login',
-                        method: 'post',
-                        data: {
+                        var data = {
                             uid: this.LoginForm.username,
                             paswd: this.LoginForm.password
                         }
-                    }).then(function(res){
-                    document.write(res.body)
+                    var postData = this.$qs.stringify(data)
+                    const { data: ret } = await this.$http
+                        .post('/api/auth/login', postData)
+                        .catch(() => console.log('信息填写错误，请重试！'))
+                    if (ret.code !== 200) return this.$message.error('登陆失败')
+                    window.sessionStorage.clear()
+                    window.sessionStorage.setItem('token', ret.data)
                     if (this.LoginForm.radio === '1') this.$router.push('/original')
-                else this.$router.push('/super')
-                         }, function(res){
-                    console.log(res.status)
-                })
+                    else this.$router.push('/super')
                 }
             })
         }

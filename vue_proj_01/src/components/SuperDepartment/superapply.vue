@@ -157,10 +157,10 @@ export default {
         },
         {
           value: '选项4',
-          label: '西二寒假考核'
+          label: '20级下'
         }
       ],
-      value: '',
+      value: this.$route.query.name,
       num: '',
       numbers: [
         {

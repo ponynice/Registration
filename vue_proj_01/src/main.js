@@ -6,7 +6,7 @@ import './plugins/element.js'
 import './assets/global.css'
 import './assets/fontclass/iconfont.css'
 import qs from 'qs'
-
+import instance_ from './api/index'
 axios.defaults.baseURL = 'http://39.104.71.38:8000'
 axios.interceptors.request.use(config => {
   console.log(config)
@@ -20,7 +20,7 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 Vue.prototype.$qs = qs
-
+Vue.prototype.instance = instance_
 new Vue({
   router,
   render: h => h(App)

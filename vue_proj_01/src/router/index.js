@@ -62,7 +62,11 @@ export default new VueRouter({
           component: Stop
         },
         {
-          path: '/2',
+          path: '/2-2',
+          component: Vacancy
+        },
+        {
+          path: '/2-1',
           component: Vacancy
         }
       ]
